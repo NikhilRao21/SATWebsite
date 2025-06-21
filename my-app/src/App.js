@@ -152,7 +152,6 @@ export default function App() {
   }
 
   const handleBlueChange = (e) => {
-    setBlue(e)
     setObjects(prevObjects => prevObjects.map(obj => ({ ...obj, bluebookUse: e })));
   }
 
