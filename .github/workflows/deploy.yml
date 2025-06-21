@@ -35,7 +35,7 @@ jobs:
       working-directory: ./my-app
       
     - name: Build application
-      run: npm run build
+      run: npm run deploy
       working-directory: ./my-app
       
     - name: Setup Pages
