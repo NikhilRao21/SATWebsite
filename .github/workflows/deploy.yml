@@ -32,9 +32,11 @@ jobs:
         
     - name: Install dependencies
       run: npm install
+      working-directory: ./my-app
       
     - name: Build application
       run: npm run build
+      working-directory: ./my-app
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -42,7 +44,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: './build'
+        path: './my-app/build'
 
   deploy:
     environment:
