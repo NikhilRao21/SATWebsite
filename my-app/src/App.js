@@ -93,7 +93,6 @@ function Slider({ onClick }) {
 
 export default function App() {
   const [numRows, setNumRows] = useState(1);
-  const [blue, setBlue] = useState("No");
   const [pdfUrl, setPdfUrl] = useState(null);
   const [alert, setAlert] = useState({
     open: false,
@@ -105,7 +104,6 @@ export default function App() {
 
   const [objects, setObjects] = useState(() => createObjects(numRows));
 
-  const [generate, setGenerate] = useState(true);
 
   const handleAddRow = () => {
     const newNum = numRows + 1;
@@ -114,18 +112,13 @@ export default function App() {
   }
 
   const handleRemoveRow = () => {
-    if (numRows != 1) {
+    if (numRows !== 1) {
       const newNum = numRows - 1;
       setNumRows(newNum)
       setObjects(prevObjects => prevObjects.slice(0, -1))
     }
   }
 
-  const handleChange = () => {
-    const newObj = objects.slice();
-    newObj[numRows - 1].skill = "hi!";
-    setObjects(newObj);
-  }
 
   const handleTestChange = (e, index) => {
     const newObj = objects.slice();
@@ -222,7 +215,6 @@ export default function App() {
   }
 
   const handleGenerateSets = () => {
-    const json1 = JSON.stringify(objects);
     handleGenerateTest()
   }
 
@@ -232,10 +224,6 @@ export default function App() {
 
   const handleSATSample = () => {
     setObjects(prevObjects => [{ ...set, test: "Math", domain: "No Filter", amount: 44 }, { ...set, test: "Reading and Writing", domain: "No Filter", amount: 54 }])
-  }
-
-  const handleExtLink = (pdfUrl) => {
-    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
   }
 
   return (
