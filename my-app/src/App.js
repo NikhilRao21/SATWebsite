@@ -337,7 +337,7 @@ export default function App() {
           onClick={handleSATSample}
           className="px-4 py-2 rounded-full border-2 border-neutral-200 hover:bg-slate-800 active:bg-slate-900 text-sm font-medium"
         >
-          Generate Sample SAT Test
+          Fill Sample SAT Test
         </button>
         <button
           onClick={handleReset}
