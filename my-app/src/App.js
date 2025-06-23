@@ -185,7 +185,7 @@ export default function App() {
 
     console.log();
 
-    fetch('http://localhost:4567/generate-pdf', {
+    fetch('http://192.168.1.173:8080/generate-pdf', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -197,6 +197,10 @@ export default function App() {
           return response.text().then(text => {
             throw new Error(text || `Server error: ${response.status}`);
           });
+        }
+        if (response.headers.get('Content-Type') !== 'application/pdf') {
+          console.log('Response is not a PDF:', response.headers.get('Content-Type'));
+          throw new Error("A Fatal Error has Occured.");
         }
         return response.blob()
       })
