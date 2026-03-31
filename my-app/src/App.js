@@ -9,10 +9,10 @@ import Alert from '@mui/material/Alert';
 
 const set = {
   test: "Math",
-  domain: "Algebra",
+  domain: "No Filter",
   skill: "No Filter",
   difficulty: "No Filter",
-  amount: "0",
+  amount: "1",
   bluebookUse: "false"
 };
 
@@ -66,7 +66,7 @@ const skillsHierarchy = {
       "Right Triangles and Trigonometry",
       "Circles"
     ],
-    "No Filter": ["No Filter"]
+    "No Filter": []
   }
 };
 
@@ -101,7 +101,7 @@ export default function App() {
     severity: '',
   });
 
-  const createObjects = (count) => { return Array.from({ length: count }, (_, index) => ({ ...set, id: index, test: "Math", domain: "Algebra" })); };
+  const createObjects = (count) => { return Array.from({ length: count }, (_, index) => ({ ...set, id: index})); };
 
   const [objects, setObjects] = useState(() => createObjects(numRows));
 
@@ -271,8 +271,8 @@ export default function App() {
         <div className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/70 backdrop-blur-sm">
           <div className="modal-card bg-zinc-900 border border-zinc-700 rounded-2xl shadow-2xl p-8 flex flex-col items-center gap-5 max-w-sm w-full mx-4">
             {/* Icon */}
-            <div className="w-14 h-14 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-              <span className="text-2xl text-amber-400">✓</span>
+            <div className="w-14 h-14 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+              <span className="text-2xl text-green-400">✓</span>
             </div>
             <div className="text-center">
               <p className="text-zinc-100 font-semibold text-lg tracking-tight">Your PDF is ready</p>
@@ -295,7 +295,7 @@ export default function App() {
                   link.click();
                   document.body.removeChild(link);
                 }}
-                className="flex-1 px-4 py-2 rounded-md bg-amber-500 text-zinc-950 text-sm font-semibold hover:bg-amber-400 active:bg-amber-600 transition-all duration-150 shadow-md shadow-amber-900/30"
+                className="flex-1 px-4 py-2 rounded-md bg-green-500 text-zinc-950 text-sm font-semibold hover:bg-green-400 active:bg-green-600 transition-all duration-150 shadow-md shadow-green-900/30"
               >
                 ↓ Download
               </button>
@@ -407,7 +407,7 @@ export default function App() {
         <p className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500 mb-4">Additional Options</p>
 
         <label className="flex flex-col sm:flex-row text-zinc-100 sm:items-center sm:justify-between gap-3 bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-700">
-          <span className="text-sm text-zinc-300">Include questions from the Bluebook app?</span>
+          <span className="text-sm text-zinc-300">Include questions from Bluebook practice tests?</span>
           <div className="relative inline-flex gap-2">
             <Slider onClick={handleBlueChange} />
           </div>
