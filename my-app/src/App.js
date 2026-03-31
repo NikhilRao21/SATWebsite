@@ -185,7 +185,7 @@ export default function App() {
 
     console.log();
 
-    fetch('https://192.168.1.173:8080/generate-pdf', {
+    fetch('https://coalitional-subabsolutely-raleigh.ngrok-free.dev/generate-pdf', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
