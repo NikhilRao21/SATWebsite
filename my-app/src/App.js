@@ -287,17 +287,13 @@ export default function App() {
               </button>
               <button
                 onClick={() => {
+                  const url = pdfUrl;
                   setPdfUrl(null);
-                  const link = document.createElement('a');
-                  link.href = pdfUrl;
-                  link.download = 'Generated Questions.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
+                  window.open(url, '_blank');
                 }}
                 className="flex-1 px-4 py-2 rounded-md bg-green-500 text-zinc-950 text-sm font-semibold hover:bg-green-400 active:bg-green-600 transition-all duration-150 shadow-md shadow-green-900/30"
               >
-                ↓ Download
+                ↓ Open PDF
               </button>
             </div>
           </div>
