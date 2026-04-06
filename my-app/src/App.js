@@ -6,6 +6,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import Alert from '@mui/material/Alert';
+import logoDark from './assets/zeta_prep_full_logo_dark.svg';
+import logoLight from './assets/zeta_prep_full_logo_light.svg';
 
 const set = {
   test: "Math",
@@ -302,6 +304,11 @@ export default function App() {
 
       {/* ── Page header ── */}
       <header className="max-w-7xl mx-auto w-full mb-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+          <div className="bg-zinc-900 rounded-xl border border-zinc-700 px-4 py-3 shadow-sm">
+            <img src={logoLight} alt="Zeta Prep logo light" className="h-10 sm:h-12 w-auto" />
+          </div>
+        </div>
         <p className="text-xs font-semibold tracking-[0.2em] uppercase text-amber-600 mb-1">SAT Practice</p>
         <h1 className="text-3xl font-bold text-zinc-900 tracking-tight">Question Set Generator</h1>
         <div className="mt-2 h-px w-16 bg-amber-500 rounded-full" />
